@@ -612,7 +612,6 @@ section,
 .hero:before {
   content: "";
   background: color-mix(in srgb, var(--background-color), transparent 70%);
-
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -734,44 +733,60 @@ section,
   .hero p {
     font-size: 20px;
   }
+  .hero img {
+    transform: translateX(-5vw); /* Move 5% of viewport width to the left */
+}
 }
 
 @media (max-width: 510px) {
-  .hero h2 {
-    font-size: 32px;
+  .hero img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    padding-left: -40px; /* Adjust this value as needed */
+    margin-right: 20px;
+    z-index: 1;
+  }
+  
+  
+  .hero:before {
+    content: "";
+    background: color-mix(in srgb, var(--background-color), transparent 70%);
+    position: absolute;
+    inset: 0;
+    z-index: 2;
   }
 
-  .container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
-  }
-  .hero p {
-    font-size: 18px;
-  }
+ 
 
   .buttoncontainer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 60%;
-    background-color: red;
-  }
-
-  #downloadbutton{
-    position: absolute;
-    top: 320px;
-    left: 69px;
-  
+    width: 100%; /* Full width for better centering */
+    gap: 20px; /* Add spacing between buttons */
+    margin-top: 20px; /* Adjust as needed */
   }
 
   .buttondiv {
-    width: 80%; /* Adapts button width for smaller screens */
-    padding: 10px;
+    width: 80%; /* Adjust width to control button size */
+    margin: 0 auto; /* Center each button */
+  }
+
+  .resume-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
   }
 }
+
+
+
+
 
 /*--------------------------------------------------------------
 # About Section
